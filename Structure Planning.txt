@@ -1,0 +1,30 @@
+Health App Template
+
+Template from: https://github.com/bradtraversy/design-resources-for-developers?tab=readme-ov-file#html--css-templates
+Privacy Policy from: https://termly.io/
+
+Possible Uses:
+1. Mental Health
+2. Nutrition
+3. Physical Activity
+4. Smoking Cessation
+5. Substance Misuse
+6. Vaccination
+
+1. Core Features
+    - Some user feedback tracking
+    - Reminder System
+    - Data visualisation
+
+2. Educational Content
+    - Resources
+
+3. Community Support
+    - Peer Support
+    - Crisis Support
+
+4. Gamification
+    - Achievements & Milestones
+    - Points & Badges System
+
+5. Privacy

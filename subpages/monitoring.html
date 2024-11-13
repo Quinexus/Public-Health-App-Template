@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Public Health App Template</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header" class="alt">
+            <a href="index.html" class="logo"><strong>Public Health App</strong> <span>by Jovan</span></a>
+            <nav>
+                <a href="#menu">Menu</a>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <ul class="links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../subpages/monitoring.html">Feedback Tracking</a></li>
+                <li><a href="../subpages/resources.html">Resources</a></li>
+                <li><a href="../subpages/support.html">Community Support</a></li>
+                <li><a href="../subpages/gamification.html">Gamification</a></li>
+                <li><a href="../subpages/privacy.html">Privacy</a></li>
+            </ul>
+            <ul class="actions stacked">
+                <li><a href="#" class="button primary fit">Get Started</a></li>
+                <li><a href="#" class="button fit">Log In</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main" class="alt">
+            <div id="myChart" style="max-width:700px; height:400px; align-items: center;"></div>
+            <script src="https://www.gstatic.com/charts/loader.js"></script>
+
+            <script>
+                google.charts.load('current', { packages: ['corechart'] });
+                google.charts.setOnLoadCallback(drawChart);
+
+                // Initial Data
+                let chartData = [
+                    ['Day', 'Progress'],
+                    [1, 7], [2, 8], [3, 8], [4, 9], [5, 9], [6, 9],
+                    [7, 10], [8, 11], [9, 14], [10, 14], [11, 15]
+                ];
+
+                function drawChart() {
+                    const data = google.visualization.arrayToDataTable(chartData);
+                    const options = {
+                        title: 'Individual Progress',
+                        hAxis: { title: 'Days' },
+                        vAxis: { title: 'Progress' },
+                        legend: 'none'
+                    };
+                    const chart = new google.visualization.LineChart(document.getElementById('myChart'));
+                    chart.draw(data, options);
+                }
+
+                function addDataPoint() {
+                    days = Math.max(...chartData.slice(1).map(innerList => innerList[0])) + 1
+                    let size = parseFloat(document.getElementById('size').value);
+                    if (!isNaN(size)) {
+                        console.log(chartData)
+                        chartData.push([days, size]);
+                        drawChart();
+                    }
+                }
+            </script>
+
+            <!-- One -->
+            <section id="one">
+                <div class="inner">
+                    <header class="major">
+                        <h1>Track your progress</h1>
+                    </header>
+                    <p>Visual Representation of Individual progress</p>
+                    
+                    <style>
+                        /* Styling the input field with id="size" */
+                        #size {
+                          color: black; /* Text color */
+                          background-color: white; /* Background color */
+                        }
+                    </style>
+
+                    <!-- Form to add data points -->
+                    <div>
+                        <h3>Add Data to Graph</h3>
+                        <label for="size">Progress:</label>
+                        <input type="number" id="size" name="size" required>
+                        <button onclick="addDataPoint()">Add Data</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+                <!-- Footer -->
+                <footer id="footer">
+                    <div class="inner">
+                        <ul class="icons">
+                            <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+                            <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+                            <li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+                            <li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                            <li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                        </ul>
+                        <ul class="copyright">
+                            <li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+                        </ul>
+                    </div>
+                </footer>
+
+    </div>
+
+<!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+</body>
+</html>
