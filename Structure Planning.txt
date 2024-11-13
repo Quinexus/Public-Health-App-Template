@@ -28,3 +28,12 @@ Possible Uses:
     - Points & Badges System
 
 5. Privacy
+
+Hackathon Strategies and Ideas:
+1. Workshops and Talks Content
+    - Back End workshop: Frameowkrs, App design tools, APIs
+    - Front End workshop: User centric design
+    - Problem Framing Workshop: Public Health related
+2. Cross-disciplinary Collaboration
+3. Mentorship and Expert Panels
+4. Feedback Loop and Iteration
